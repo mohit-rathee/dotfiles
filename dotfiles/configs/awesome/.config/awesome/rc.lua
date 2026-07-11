@@ -546,10 +546,12 @@ local globalkeys = gears.table.join(
 
 	awful.key({ modkey, "Control" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 	awful.key({ modkey }, "[", function()
-		awful.spawn.with_shell("pactl -- set-sink-volume 0 +5%")
+		-- awful.spawn.with_shell("pactl -- set-sink-volume 0 +5%")
+		awful.spawn.with_shell("awesome-signal-root 'acpi::volume_up'")
 	end, { description = "Increase volume", group = "Volume" }),
 	awful.key({ modkey }, "]", function()
-		awful.spawn.with_shell("pactl -- set-sink-volume 0 -5%")
+		-- awful.spawn.with_shell("pactl -- set-sink-volume 0 -5%")
+		awful.spawn.with_shell("awesome-signal-root 'acpi::volume_down'")
 	end, { description = "Decrease volume", group = "Volume" }),
 	awful.key({ modkey, "Shift" }, "[", function()
 		awesome.emit_signal("volume::down")
