@@ -1,0 +1,12 @@
+local awful = require("awful")
+local tags = require("screen.tags.setup")
+local tasks = require("screen.tasks.setup")
+local topbar = require("ui.topbar.setup")
+local set_wallpaper = require("ui.wallpaper")
+
+awful.screen.connect_for_each_screen(function(s)
+	set_wallpaper(s)
+	tags(s)
+	tasks(s)
+	topbar(s)
+end)

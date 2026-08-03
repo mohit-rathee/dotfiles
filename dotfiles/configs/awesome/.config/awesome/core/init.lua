@@ -1,0 +1,5 @@
+require("core.globals")
+require("core.errors")
+require("core.beautiful")
+require("core.debug")
+require("core.autostart")
